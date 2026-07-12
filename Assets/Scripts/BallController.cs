@@ -1,11 +1,11 @@
 using UnityEngine;
-using UnityEngine.InputSystem; // Added this
+using UnityEngine.InputSystem;
 
 [RequireComponent(typeof(Rigidbody))]
 public class BallController : MonoBehaviour
 {
     public float kickForce = 10f;
-    public InputActionReference interactAction; // Slot in the Inspector
+    public InputActionReference interactAction; 
     
     private bool isPlayerNear = false;
     private Rigidbody rb;
@@ -14,6 +14,10 @@ public class BallController : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        
+        // FREEZE the ball so bumping into it does nothing
+        rb.isKinematic = true; 
+        
         if (interactAction != null) interactAction.action.Enable();
     }
 
@@ -21,6 +25,9 @@ public class BallController : MonoBehaviour
     {
         if (isPlayerNear && interactAction.action.WasPressedThisFrame())
         {
+            // UNFREEZE the ball right before we kick it
+            rb.isKinematic = false; 
+
             Vector3 pushDirection = (transform.position - playerTransform.position).normalized;
             pushDirection.y = 0.5f; 
             rb.AddForce(pushDirection * kickForce, ForceMode.Impulse);
