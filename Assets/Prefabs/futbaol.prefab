@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 7042236487203117492}
   - component: {fileID: 1849624920367221654}
   - component: {fileID: 690022038335918155}
+  - component: {fileID: 9049929636989052621}
   m_Layer: 0
   m_Name: futbaol
   m_TagString: Ball
@@ -30,7 +31,7 @@ Transform:
   m_GameObject: {fileID: 6718251875383336492}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.40031, y: 0.125, z: 0.50467}
+  m_LocalPosition: {x: 0.40031, y: 0.081, z: 0.50467}
   m_LocalScale: {x: 0.32825, y: 0.32825, z: 0.32825}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -108,7 +109,7 @@ SphereCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -153,5 +154,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37bba13808048a146970d69c4ec2f8e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BallController
-  kickForce: 15
+  kickForce: 7
   interactAction: {fileID: 1781555164194001046, guid: 052faaac586de48259a63d0c4782560b, type: 3}
+--- !u!135 &9049929636989052621
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6718251875383336492}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 1.2762762
+  m_Center: {x: 0, y: 0.27921167, z: 0}
